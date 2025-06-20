@@ -1,0 +1,36 @@
+{
+  "name": "ai-code-review-frontend",
+  "version": "0.1.0",
+  "description": "Frontend for ai-code-review-squad",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@mui/material": "^5.14.4",
+    "@mui/icons-material": "^5.14.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.5",
+    "react-query": "^3.39.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^3.1.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-react": "^7.33.2",
+    "typescript": "^5.1.6",
+    "vite": "^4.3.9",
+    "vitest": "^0.34.3",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "prettier": "^3.0.0"
+  }
+}
