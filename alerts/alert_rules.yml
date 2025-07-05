@@ -1,0 +1,21 @@
+groups:
+  - name: api-slo
+    rules:
+      - alert: HighApiLatency
+        expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{endpoint!="/metrics"}[5m])) by (le)) > 0.8
+        for: 10m
+        labels:
+          severity: page
+        annotations:
+          summary: "High API latency (p95)"
+          description: "The p95 latency of API requests has been above 800ms for 10 minutes."
+  - name: task-slo
+    rules:
+      - alert: HighTaskFailureRate
+        expr: sum(rate(celery_task_total{status="failure"}[5m])) / sum(rate(celery_task_total[5m])) > 0.005
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High Celery task failure rate"
+          description: "More than 0.5% of tasks have failed in the last 5 minutes."

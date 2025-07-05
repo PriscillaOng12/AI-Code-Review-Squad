@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "panels": [
+    {
+      "type": "barchart",
+      "title": "Critical Findings by Agent (7d)",
+      "targets": [
+        {
+          "expr": "sum by (agent_name) (increase(findings_total{severity=\"critical\"}[7d]))",
+          "legendFormat": "{{agent_name}}"
+        }
+      ],
+      "xaxis": {"mode": "time"},
+      "yaxes": [{"label": "Count"}, {"show": false}]
+    },
+    {
+      "type": "stat",
+      "title": "TTFC p50/p90 (min)",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.5, rate(ttfc_minutes_bucket[1d]))",
+          "legendFormat": "p50"
+        },
+        {
+          "expr": "histogram_quantile(0.9, rate(ttfc_minutes_bucket[1d]))",
+          "legendFormat": "p90"
+        }
+      ],
+      "colors": ["#7eb26d", "#ba43a9"],
+      "sparkline": true
+    }
+  ],
+  "schemaVersion": 36,
+  "version": 1
+}
