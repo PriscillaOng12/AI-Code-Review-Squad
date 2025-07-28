@@ -1,0 +1,54 @@
+name: Analytics CI
+on:
+  push:
+    paths:
+      - 'analytics/**'
+      - 'backend/app/scripts/analytics_export.py'
+  pull_request:
+    paths:
+      - 'analytics/**'
+      - 'backend/app/scripts/analytics_export.py'
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: ai_review
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install backend dependencies
+        run: |
+          pip install poetry
+          cd backend
+          poetry install --no-interaction
+      - name: Run migrations and seed
+        run: |
+          cd backend
+          poetry run alembic upgrade head
+          poetry run python app/demo/seed.py
+      - name: Export analytics for today
+        run: |
+          cd backend
+          poetry run python app/scripts/analytics_export.py --date $(date -u +%F)
+      - name: Validate analytics with GE-like checks
+        run: |
+          python analytics/gx/validate.py
+      - name: Smoke test Delta format
+        run: |
+          pip install pyspark==3.4.1
+          export ANALYTICS_FORMAT=PARQUET
+          python analytics/notebooks/OrgRiskTrends.py

@@ -1,0 +1,100 @@
+# Default values for ai‑code‑review‑squad.
+
+replicaCount: 1
+
+image:
+  repository: your_org/ai-code-review-backend
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+frontend:
+  image:
+    repository: your_org/ai-code-review-frontend
+    tag: "latest"
+    pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: review.local
+      paths:
+        - "/"
+  tls: []
+
+resources:
+  backend:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+  workers:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+  frontend:
+    limits:
+      cpu: 200m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 64Mi
+
+env:
+  APP_ENV: "prod"
+  API_PORT: "8000"
+  DATABASE_URL: "postgresql://{{ .Release.Name }}-postgresql:5432/ai_review"
+  REDIS_URL: "redis://:{{ .Values.redis.password }}@{{ .Release.Name }}-redis-master:6379/0"
+  MOCK_LLM: "false"
+  ALLOWED_ORIGINS: "https://review.local"
+  GITHUB_APP_ID: ""
+  GITHUB_APP_PRIVATE_KEY_BASE64: ""
+  GITHUB_WEBHOOK_SECRET: ""
+  OTEL_SERVICE_NAME: "ai-code-review-backend"
+  OTEL_EXPORTER_OTLP_ENDPOINT: ""
+  ANALYTICS_ENABLED: "true"
+  ANALYTICS_FORMAT: "PARQUET"
+  ANALYTICS_SINK: ""
+
+postgresql:
+  enabled: true
+  auth:
+    postgresPassword: postgres
+    username: postgres
+    password: postgres
+    database: ai_review
+  primary:
+    persistence:
+      enabled: false
+
+redis:
+  enabled: true
+  auth:
+    enabled: true
+    password: redispass
+  architecture: standalone
+  master:
+    persistence:
+      enabled: false
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
+
+keda:
+  enabled: false
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

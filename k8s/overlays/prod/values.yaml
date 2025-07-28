@@ -1,0 +1,25 @@
+replicaCount: 2
+
+ingress:
+  enabled: true
+  hosts:
+    - host: review.example.com
+      paths:
+        - "/"
+  tls:
+    - hosts:
+        - review.example.com
+      secretName: review-tls
+
+env:
+  APP_ENV: "prod"
+  MOCK_LLM: "false"
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+
+keda:
+  enabled: false

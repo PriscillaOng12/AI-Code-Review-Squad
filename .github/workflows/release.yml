@@ -1,0 +1,13 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create release notes (placeholder)
+        run: echo "Semantic release would run here."

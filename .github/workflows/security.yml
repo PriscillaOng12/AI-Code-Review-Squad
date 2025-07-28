@@ -1,0 +1,32 @@
+name: Security
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install bandit pip-audit
+      - name: Run Bandit
+        run: bandit -r backend/app -ll
+      - name: Run pip-audit
+        run: pip-audit -r backend/pyproject.toml
+  trivy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Trivy on Dockerfiles
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: config
+          scan-ref: .
+          skip-dirs: node_modules

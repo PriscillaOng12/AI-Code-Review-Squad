@@ -1,0 +1,18 @@
+{{- if .Values.keda.enabled }}
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: {{ include "ai-code-review-squad.fullname" . }}-workers
+  labels: {{ include "ai-code-review-squad.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef:
+    name: {{ include "ai-code-review-squad.fullname" . }}-workers
+  minReplicaCount: {{ .Values.autoscaling.minReplicas }}
+  maxReplicaCount: {{ .Values.autoscaling.maxReplicas }}
+  triggers:
+    - type: redis
+      metadata:
+        address: {{ .Values.env.REDIS_URL | quote }}
+        listName: celery
+        listLength: "5"
+{{- end }}

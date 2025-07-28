@@ -1,0 +1,51 @@
+name: Backend CI
+on:
+  push:
+    paths:
+      - 'backend/**'
+  pull_request:
+    paths:
+      - 'backend/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: ai_review
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Poetry
+        run: |
+          pip install poetry
+      - name: Install dependencies
+        run: |
+          cd backend
+          poetry install --no-interaction
+      - name: Run migrations
+        run: |
+          cd backend
+          poetry run alembic upgrade head
+      - name: Run tests
+        run: |
+          cd backend
+          poetry run pytest -q
+      - name: Lint
+        run: |
+          cd backend
+          poetry run ruff app
+          poetry run black --check app
+          poetry run mypy app --ignore-missing-imports

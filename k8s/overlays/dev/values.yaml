@@ -1,0 +1,22 @@
+image:
+  tag: "latest"
+
+frontend:
+  image:
+    tag: "latest"
+
+ingress:
+  enabled: false
+
+env:
+  APP_ENV: "local"
+  API_PORT: "8000"
+  DATABASE_URL: "postgresql://postgres:postgres@{{ include \"ai-code-review-squad.fullname\" . }}-postgresql:5432/ai_review"
+  REDIS_URL: "redis://:redispass@{{ include \"ai-code-review-squad.fullname\" . }}-redis-master:6379/0"
+  MOCK_LLM: "true"
+  ALLOWED_ORIGINS: "http://localhost:5173"
+  ANALYTICS_FORMAT: "PARQUET"
+  ANALYTICS_SINK: ""
+
+autoscaling:
+  enabled: false

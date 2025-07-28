@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ai-code-review-squad.fullname" . }}-workers
+  labels: {{ include "ai-code-review-squad.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "ai-code-review-squad.name" . }}
+      app.kubernetes.io/component: workers
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "ai-code-review-squad.name" . }}
+        app.kubernetes.io/component: workers
+    spec:
+      containers:
+        - name: workers
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["celery", "-A", "app.workers.celery_app", "worker", "--queues", "default,security,style,logic,performance,architecture", "--loglevel", "INFO"]
+          env:
+            {{- range $key, $value := .Values.env }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+            {{- end }}
+          resources: {{- toYaml .Values.resources.workers | nindent 12 }}
