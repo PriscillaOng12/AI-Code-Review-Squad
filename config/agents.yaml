@@ -1,0 +1,90 @@
+# Agent Configuration
+# Customize behavior of AI agents
+
+security_agent:
+  enabled: true
+  severity_threshold: "medium"
+  confidence_threshold: 0.7
+  rules:
+    - sql_injection
+    - xss_detection
+    - auth_bypass
+    - hardcoded_secrets
+    - command_injection
+    - path_traversal
+    - insecure_crypto
+    - sensitive_data_exposure
+  llm_provider: "openai"  # or "anthropic"
+  max_tokens: 2000
+
+performance_agent:
+  enabled: true
+  severity_threshold: "high"
+  confidence_threshold: 0.8
+  complexity_threshold: "O(n^2)"
+  memory_threshold_mb: 100
+  rules:
+    - nested_loops
+    - inefficient_algorithms
+    - memory_leaks
+    - database_n_plus_one
+    - large_file_operations
+  llm_provider: "anthropic"
+  max_tokens: 1500
+
+style_agent:
+  enabled: true
+  severity_threshold: "low"
+  confidence_threshold: 0.9
+  standards:
+    python: "pep8"
+    javascript: "eslint"
+    typescript: "prettier"
+  rules:
+    - naming_conventions
+    - code_formatting
+    - documentation
+    - import_organization
+    - line_length
+  llm_provider: "openai"
+  max_tokens: 1000
+
+logic_agent:
+  enabled: true
+  severity_threshold: "high"
+  confidence_threshold: 0.85
+  rules:
+    - null_pointer_dereference
+    - division_by_zero
+    - infinite_loops
+    - unreachable_code
+    - off_by_one_errors
+    - race_conditions
+  llm_provider: "anthropic"
+  max_tokens: 1800
+
+architecture_agent:
+  enabled: true
+  severity_threshold: "medium"
+  confidence_threshold: 0.75
+  principles:
+    - solid_principles
+    - design_patterns
+    - separation_of_concerns
+    - dry_principle
+  rules:
+    - god_class
+    - god_method
+    - circular_dependencies
+    - tight_coupling
+    - missing_abstractions
+  llm_provider: "openai"
+  max_tokens: 2500
+
+# Global settings
+global:
+  max_concurrent_agents: 5
+  timeout_seconds: 300
+  retry_attempts: 3
+  enable_deduplication: true
+  enable_prioritization: true
