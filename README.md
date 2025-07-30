@@ -44,15 +44,15 @@ Instead of one "do-it-all" AI, I designed a squad of 5 agents, each with their o
 ## 🏗️ Technical Architecture
 
 ```ascii
-┌──────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-│  GitHub PR   │──▶──│ FastAPI API  │──▶──│  Celery/Redis │──▶──│ AgentOrchestra│
-└──────────────┘      └──────────────┘      └──────────────┘      └──────────────┘
+┌──────────────┐      ┌──────────────┐      ┌──────────────┐      ┌─────────-────-─┐
+│  GitHub PR   │──▶── │ FastAPI API  │──▶── │ Celery/Redis │──▶── │ AgentOrchestra │
+└──────────────┘      └──────────────┘      └──────────────┘      └───────────-──-─┘
                                                                   │
                                                                   ▼
  ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
- │ Security    │ Performance  │   Style     │   Logic     │ Architecture │
- │  Agent      │   Agent      │   Agent     │   Agent     │   Agent      │
- └─────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
+ │   Security   │  Performance │    Style     │    Logic     │ Architecture │
+ │    Agent     │    Agent     │    Agent     │    Agent     │   Agent      │
+ └────────────-─┴──────────────┴──────────────┴──────────────┴──────────────┘
                                                                   │
                                                                   ▼
                                                         ┌─────────────────┐
