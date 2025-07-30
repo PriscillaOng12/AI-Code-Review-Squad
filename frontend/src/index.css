@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.CodeMirror {
+  height: auto !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+.agent-card {
+  transition: all 0.3s ease;
+}
+
+.agent-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.severity-critical {
+  color: #d32f2f;
+  background-color: rgba(211, 47, 47, 0.1);
+}
+
+.severity-high {
+  color: #f57c00;
+  background-color: rgba(245, 124, 0, 0.1);
+}
+
+.severity-medium {
+  color: #f9a825;
+  background-color: rgba(249, 168, 37, 0.1);
+}
+
+.severity-low {
+  color: #388e3c;
+  background-color: rgba(56, 142, 60, 0.1);
+}
+
+.severity-info {
+  color: #1976d2;
+  background-color: rgba(25, 118, 210, 0.1);
+}
+
+.code-snippet {
+  background-color: #f5f5f5;
+  border-left: 4px solid #1976d2;
+  padding: 12px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-x: auto;
+  margin: 8px 0;
+}
+
+.finding-card {
+  border-left: 4px solid #e0e0e0;
+  margin-bottom: 16px;
+}
+
+.finding-card.critical {
+  border-left-color: #d32f2f;
+}
+
+.finding-card.high {
+  border-left-color: #f57c00;
+}
+
+.finding-card.medium {
+  border-left-color: #f9a825;
+}
+
+.finding-card.low {
+  border-left-color: #388e3c;
+}
+
+.finding-card.info {
+  border-left-color: #1976d2;
+}
