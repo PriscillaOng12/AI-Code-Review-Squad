@@ -1,27 +1,27 @@
 # AI Code Review Squad
 
-**Intelligent Multi-Agent Code Review Automation Platform**
+**Intelligent Multi-Agent AI Code Review Automation System** that processes GitHub PRs through specialized AI agents, reducing review time by 40% and catching 95% of common issues before human review.
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/your-org/ai-code-review-squad) [![Coverage](https://img.shields.io/badge/coverage-87%25-brightgreen)](https://github.com/your-org/ai-code-review-squad) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![Docker](https://img.shields.io/badge/docker-ready-blue)](docker-compose.yml)
 
-**Production-Ready AI Code Review System** that processes GitHub PRs through specialized AI agents, reducing review time by 40% and catching 95% of common issues before human review.
+https://github.com/user-attachments/assets/13b42cc7-c1ef-4b67-b63f-24d9b7b28232
+
 
 ## Technology Stack
 
 ### Backend Architecture
-![Python](https://img.shields.io/badge/Python-3.11-306998?style=for-the-badge&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-0.104-059862?style=for-the-badge&logo=fastapi&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0-BA2025?style=for-the-badge&logo=sqlalchemy&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Python](https://img.shields.io/badge/Python-306998?style=for-the-badge&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-059862?style=for-the-badge&logo=fastapi&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-BA2025?style=for-the-badge&logo=sqlalchemy&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### Task Processing & Caching  
-![Celery](https://img.shields.io/badge/Celery-5.3-37B24D?style=for-the-badge&logo=celery&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-7.0-CC2927?style=for-the-badge&logo=redis&logoColor=white)
+![Celery](https://img.shields.io/badge/Celery-37B24D?style=for-the-badge&logo=celery&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-CC2927?style=for-the-badge&logo=redis&logoColor=white)
 
 ### Frontend
-![React](https://img.shields.io/badge/React-18.2-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-5.1-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Material UI](https://img.shields.io/badge/Material_UI-5.14-0081CB?style=for-the-badge&logo=mui&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-4.3-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Material UI](https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=mui&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 
 ### Infrastructure & DevOps
-![Docker](https://img.shields.io/badge/Docker-Ready-0db7ed?style=for-the-badge&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-Helm-326ce5?style=for-the-badge&logo=kubernetes&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C?style=for-the-badge&logo=prometheus&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-Dashboards-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-326ce5?style=for-the-badge&logo=kubernetes&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
 
 ### Analytics & ML
-![Pandas](https://img.shields.io/badge/Pandas-2.0-2C2D72?style=for-the-badge&logo=pandas&logoColor=white) ![Apache Parquet](https://img.shields.io/badge/Parquet-Analytics-50ABF1?style=for-the-badge&logo=apache&logoColor=white) ![PySpark](https://img.shields.io/badge/PySpark-Notebooks-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white) ![Apache Parquet](https://img.shields.io/badge/Parquet-50ABF1?style=for-the-badge&logo=apache&logoColor=white) ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
 
 ## Problem & Solution Overview
 
