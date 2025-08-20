@@ -1,4 +1,4 @@
-#  System Architecture
+# System Architecture
 
 ## Table of Contents
 - [Overview](#overview)
@@ -18,7 +18,7 @@ AI Code Review Squad is designed as a **distributed, event-driven microservices 
 ### High-Level Architecture
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#2c3e50', 'lineColor': '#34495e', 'secondaryColor': '#ffffff', 'tertiaryColor': '#ffffff', 'background': '#ffffff', 'mainBkg': '#ffffff', 'secondBkg': '#ffffff', 'tertiaryBkg': '#ffffff'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': 'transparent', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ffffff', 'lineColor': '#ffffff', 'secondaryColor': 'transparent', 'tertiaryColor': 'transparent', 'background': 'transparent', 'mainBkg': 'transparent', 'secondBkg': 'transparent', 'tertiaryBkg': 'transparent', 'clusterBkg': 'transparent', 'clusterBorder': '#ffffff', 'edgeLabelBackground': 'transparent'}}}%%
 graph TB
     subgraph "External Systems"
         GITHUB[GitHub Repository<br/>Pull Requests]
@@ -113,49 +113,49 @@ graph TB
     W1 --> PROMETHEUS
     PROMETHEUS --> GRAFANA
     
-    style GITHUB fill:#ff6b6b,stroke:#e74c3c,stroke-width:3px,color:#ffffff
-    style SLACK fill:#4ecdc4,stroke:#1abc9c,stroke-width:3px,color:#ffffff
-    style DATADOG fill:#45b7d1,stroke:#3498db,stroke-width:3px,color:#ffffff
+    style GITHUB fill:#ff6b6b,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style SLACK fill:#4ecdc4,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style DATADOG fill:#45b7d1,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style LB fill:#a8e6cf,stroke:#27ae60,stroke-width:3px,color:#2c3e50
-    style WAF fill:#ff8b94,stroke:#e74c3c,stroke-width:3px,color:#ffffff
+    style LB fill:#a8e6cf,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style WAF fill:#ff8b94,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style API1 fill:#87ceeb,stroke:#3498db,stroke-width:3px,color:#2c3e50
-    style API2 fill:#87ceeb,stroke:#3498db,stroke-width:3px,color:#2c3e50
-    style API3 fill:#87ceeb,stroke:#3498db,stroke-width:3px,color:#2c3e50
+    style API1 fill:#87ceeb,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style API2 fill:#87ceeb,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style API3 fill:#87ceeb,stroke:#ffffff,stroke-width:3px,color:#2c3e50
     
-    style JWT fill:#ffd93d,stroke:#f39c12,stroke-width:3px,color:#2c3e50
-    style RBAC fill:#ffd93d,stroke:#f39c12,stroke-width:3px,color:#2c3e50
-    style RATELIMIT fill:#ffd93d,stroke:#f39c12,stroke-width:3px,color:#2c3e50
+    style JWT fill:#ffd93d,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style RBAC fill:#ffd93d,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style RATELIMIT fill:#ffd93d,stroke:#ffffff,stroke-width:3px,color:#2c3e50
     
-    style REDIS_BROKER fill:#ff9ff3,stroke:#e91e63,stroke-width:3px,color:#2c3e50
-    style REDIS_CACHE fill:#ff9ff3,stroke:#e91e63,stroke-width:3px,color:#2c3e50
+    style REDIS_BROKER fill:#ff9ff3,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style REDIS_CACHE fill:#ff9ff3,stroke:#ffffff,stroke-width:3px,color:#2c3e50
     
-    style W1 fill:#c7ecee,stroke:#00bcd4,stroke-width:3px,color:#2c3e50
-    style W2 fill:#c7ecee,stroke:#00bcd4,stroke-width:3px,color:#2c3e50
-    style W3 fill:#c7ecee,stroke:#00bcd4,stroke-width:3px,color:#2c3e50
-    style W4 fill:#c7ecee,stroke:#00bcd4,stroke-width:3px,color:#2c3e50
-    style W5 fill:#c7ecee,stroke:#00bcd4,stroke-width:3px,color:#2c3e50
-    style W6 fill:#c7ecee,stroke:#00bcd4,stroke-width:3px,color:#2c3e50
+    style W1 fill:#c7ecee,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style W2 fill:#c7ecee,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style W3 fill:#c7ecee,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style W4 fill:#c7ecee,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style W5 fill:#c7ecee,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style W6 fill:#c7ecee,stroke:#ffffff,stroke-width:3px,color:#2c3e50
     
-    style PGPRIMARY fill:#a8e6cf,stroke:#4caf50,stroke-width:3px,color:#2c3e50
-    style PGREPLICA fill:#c8e6c9,stroke:#66bb6a,stroke-width:3px,color:#2c3e50
-    style S3 fill:#ffcdd2,stroke:#f44336,stroke-width:3px,color:#2c3e50
+    style PGPRIMARY fill:#a8e6cf,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style PGREPLICA fill:#c8e6c9,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style S3 fill:#ffcdd2,stroke:#ffffff,stroke-width:3px,color:#2c3e50
     
-    style SPARK fill:#fff9c4,stroke:#ffeb3b,stroke-width:3px,color:#2c3e50
-    style JUPYTER fill:#ffcc80,stroke:#ff9800,stroke-width:3px,color:#2c3e50
-    style AIRFLOW fill:#f8bbd9,stroke:#e91e63,stroke-width:3px,color:#2c3e50
+    style SPARK fill:#fff9c4,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style JUPYTER fill:#ffcc80,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style AIRFLOW fill:#f8bbd9,stroke:#ffffff,stroke-width:3px,color:#2c3e50
     
-    style PROMETHEUS fill:#e1bee7,stroke:#9c27b0,stroke-width:3px,color:#2c3e50
-    style GRAFANA fill:#b39ddb,stroke:#673ab7,stroke-width:3px,color:#ffffff
-    style JAEGER fill:#9fa8da,stroke:#3f51b5,stroke-width:3px,color:#ffffff
-    style ELK fill:#90caf9,stroke:#2196f3,stroke-width:3px,color:#2c3e50
+    style PROMETHEUS fill:#e1bee7,stroke:#ffffff,stroke-width:3px,color:#2c3e50
+    style GRAFANA fill:#b39ddb,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style JAEGER fill:#9fa8da,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style ELK fill:#90caf9,stroke:#ffffff,stroke-width:3px,color:#2c3e50
 ```
 
 ### Request Flow Architecture
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#3498db', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#2980b9', 'lineColor': '#34495e', 'secondaryColor': '#e74c3c', 'tertiaryColor': '#f39c12', 'background': '#ffffff', 'mainBkg': '#3498db', 'secondBkg': '#e74c3c', 'tertiaryBkg': '#f39c12', 'actorBkg': '#e8f5e8', 'actorTextColor': '#2c3e50', 'actorLineColor': '#27ae60', 'activationBkgColor': '#fff3e0', 'activationBorderColor': '#ff9800', 'loopTextColor': '#2c3e50', 'noteBkgColor': '#e3f2fd', 'noteTextColor': '#1565c0', 'noteBorderColor': '#2196f3'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': 'transparent', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ffffff', 'lineColor': '#ffffff', 'secondaryColor': 'transparent', 'tertiaryColor': 'transparent', 'background': 'transparent', 'mainBkg': 'transparent', 'secondBkg': 'transparent', 'tertiaryBkg': 'transparent', 'actorBkg': 'transparent', 'actorTextColor': '#ffffff', 'actorLineColor': '#ffffff', 'activationBkgColor': 'transparent', 'activationBorderColor': '#ffffff', 'loopTextColor': '#ffffff', 'noteBkgColor': 'transparent', 'noteTextColor': '#ffffff', 'noteBorderColor': '#ffffff', 'messageLine0': '#ffffff', 'messageLine1': '#ffffff', 'messageText': '#ffffff', 'labelTextColor': '#ffffff'}}}%%
 sequenceDiagram
     participant GH as GitHub
     participant API as FastAPI API
@@ -217,7 +217,7 @@ sequenceDiagram
 ### Database Schema Design
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#ffffff', 'primaryTextColor': '#2c3e50', 'primaryBorderColor': '#34495e', 'lineColor': '#7f8c8d', 'secondaryColor': '#ecf0f1', 'tertiaryColor': '#bdc3c7', 'background': '#ffffff', 'mainBkg': '#ffffff', 'secondBkg': '#ecf0f1', 'entityBkg': '#e8f5e8', 'entityTextColor': '#2c3e50', 'relationshipLabelColor': '#2c3e50', 'relationshipLabelBackground': '#ffffff'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': 'transparent', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ffffff', 'lineColor': '#ffffff', 'secondaryColor': 'transparent', 'tertiaryColor': 'transparent', 'background': 'transparent', 'mainBkg': 'transparent', 'secondBkg': 'transparent', 'entityBkg': 'transparent', 'entityTextColor': '#ffffff', 'relationshipLabelColor': '#ffffff', 'relationshipLabelBackground': 'transparent', 'entityBorderColor': '#ffffff'}}}%%
 erDiagram
     TENANTS ||--o{ USERS : "belongs_to"
     TENANTS ||--o{ PROJECTS : "owns"
@@ -323,7 +323,7 @@ erDiagram
 ### Data Flow Pipeline
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#ffffff', 'primaryTextColor': '#2c3e50', 'primaryBorderColor': '#2c3e50', 'lineColor': '#34495e', 'secondaryColor': '#ffffff', 'tertiaryColor': '#ffffff', 'background': '#ffffff', 'mainBkg': '#ffffff', 'secondBkg': '#ffffff', 'tertiaryBkg': '#ffffff'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': 'transparent', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ffffff', 'lineColor': '#ffffff', 'secondaryColor': 'transparent', 'tertiaryColor': 'transparent', 'background': 'transparent', 'mainBkg': 'transparent', 'secondBkg': 'transparent', 'tertiaryBkg': 'transparent', 'clusterBkg': 'transparent', 'clusterBorder': '#ffffff', 'edgeLabelBackground': 'transparent'}}}%%
 graph LR
     subgraph "Operational Data"
         OLTP[PostgreSQL OLTP<br/>Reviews, Findings, Users]
@@ -359,15 +359,15 @@ graph LR
     SPARK --> DASHBOARDS
     DASHBOARDS --> REPORTS
     
-    style OLTP fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#ffffff
-    style EXTRACT fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#ffffff
-    style VALIDATE fill:#f39c12,stroke:#e67e22,stroke-width:3px,color:#ffffff
-    style PARQUET fill:#9b59b6,stroke:#8e44ad,stroke-width:3px,color:#ffffff
-    style DELTA fill:#1abc9c,stroke:#16a085,stroke-width:3px,color:#ffffff
-    style SPARK fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#ffffff
-    style JUPYTER fill:#27ae60,stroke:#229954,stroke-width:3px,color:#ffffff
-    style DASHBOARDS fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#ffffff
-    style REPORTS fill:#34495e,stroke:#2c3e50,stroke-width:3px,color:#ffffff
+    style OLTP fill:#3498db,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style EXTRACT fill:#e74c3c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style VALIDATE fill:#f39c12,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style PARQUET fill:#9b59b6,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style DELTA fill:#1abc9c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style SPARK fill:#e67e22,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style JUPYTER fill:#27ae60,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style DASHBOARDS fill:#2ecc71,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style REPORTS fill:#34495e,stroke:#ffffff,stroke-width:3px,color:#ffffff
 ```
 
 ## Security Architecture
@@ -375,7 +375,7 @@ graph LR
 ### Authentication & Authorization Flow
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#ffffff', 'primaryTextColor': '#2c3e50', 'primaryBorderColor': '#2c3e50', 'lineColor': '#34495e', 'secondaryColor': '#ffffff', 'tertiaryColor': '#ffffff', 'background': '#ffffff', 'mainBkg': '#ffffff', 'secondBkg': '#ffffff', 'tertiaryBkg': '#ffffff'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': 'transparent', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ffffff', 'lineColor': '#ffffff', 'secondaryColor': 'transparent', 'tertiaryColor': 'transparent', 'background': 'transparent', 'mainBkg': 'transparent', 'secondBkg': 'transparent', 'tertiaryBkg': 'transparent', 'clusterBkg': 'transparent', 'clusterBorder': '#ffffff', 'edgeLabelBackground': 'transparent'}}}%%
 graph TB
     subgraph "Client Layer"
         WEB[Web Browser]
@@ -422,23 +422,23 @@ graph TB
     
     API --> DB
     
-    style WEB fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#ffffff
-    style API_CLIENT fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#ffffff
-    style WEBHOOK fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#ffffff
+    style WEB fill:#3498db,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style API_CLIENT fill:#3498db,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style WEBHOOK fill:#3498db,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style WAF fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#ffffff
-    style TLS fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#ffffff
+    style WAF fill:#e74c3c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style TLS fill:#e67e22,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style JWT_DECODE fill:#f39c12,stroke:#e67e22,stroke-width:3px,color:#ffffff
-    style GITHUB_OAUTH fill:#f39c12,stroke:#e67e22,stroke-width:3px,color:#ffffff
-    style WEBHOOK_SIG fill:#f39c12,stroke:#e67e22,stroke-width:3px,color:#ffffff
+    style JWT_DECODE fill:#f39c12,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style GITHUB_OAUTH fill:#f39c12,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style WEBHOOK_SIG fill:#f39c12,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style RBAC_ENGINE fill:#27ae60,stroke:#229954,stroke-width:3px,color:#ffffff
-    style TENANT_ISOLATION fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#ffffff
-    style RATE_LIMITER fill:#1abc9c,stroke:#16a085,stroke-width:3px,color:#ffffff
+    style RBAC_ENGINE fill:#27ae60,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style TENANT_ISOLATION fill:#2ecc71,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style RATE_LIMITER fill:#1abc9c,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style API fill:#9b59b6,stroke:#8e44ad,stroke-width:3px,color:#ffffff
-    style DB fill:#34495e,stroke:#2c3e50,stroke-width:3px,color:#ffffff
+    style API fill:#9b59b6,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style DB fill:#34495e,stroke:#ffffff,stroke-width:3px,color:#ffffff
 ```
 
 ### Security Controls Matrix
@@ -461,7 +461,7 @@ graph TB
 ### Horizontal Scaling Strategy
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#ffffff', 'primaryTextColor': '#2c3e50', 'primaryBorderColor': '#2c3e50', 'lineColor': '#34495e', 'secondaryColor': '#ffffff', 'tertiaryColor': '#ffffff', 'background': '#ffffff', 'mainBkg': '#ffffff', 'secondBkg': '#ffffff', 'tertiaryBkg': '#ffffff'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': 'transparent', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ffffff', 'lineColor': '#ffffff', 'secondaryColor': 'transparent', 'tertiaryColor': 'transparent', 'background': 'transparent', 'mainBkg': 'transparent', 'secondBkg': 'transparent', 'tertiaryBkg': 'transparent', 'clusterBkg': 'transparent', 'clusterBorder': '#ffffff', 'edgeLabelBackground': 'transparent'}}}%%
 graph TB
     subgraph "Load Distribution"
         ALB[Application Load Balancer<br/>Round Robin with Health Checks]
@@ -506,22 +506,22 @@ graph TB
     W2 --> REDIS_CLUSTER
     WN --> REDIS_CLUSTER
     
-    style ALB fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#ffffff
-    style ASG fill:#2980b9,stroke:#21618c,stroke-width:3px,color:#ffffff
+    style ALB fill:#3498db,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style ASG fill:#2980b9,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style API1 fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#ffffff
-    style API2 fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#ffffff
-    style APIN fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#ffffff
+    style API1 fill:#e74c3c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style API2 fill:#e74c3c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style APIN fill:#e74c3c,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style KEDA fill:#f39c12,stroke:#e67e22,stroke-width:3px,color:#ffffff
-    style W1 fill:#9b59b6,stroke:#8e44ad,stroke-width:3px,color:#ffffff
-    style W2 fill:#9b59b6,stroke:#8e44ad,stroke-width:3px,color:#ffffff
-    style WN fill:#9b59b6,stroke:#8e44ad,stroke-width:3px,color:#ffffff
+    style KEDA fill:#f39c12,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style W1 fill:#9b59b6,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style W2 fill:#9b59b6,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style WN fill:#9b59b6,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style PGPRIMARY fill:#27ae60,stroke:#229954,stroke-width:3px,color:#ffffff
-    style PGREPLICA1 fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#ffffff
-    style PGREPLICA2 fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#ffffff
-    style REDIS_CLUSTER fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#ffffff
+    style PGPRIMARY fill:#27ae60,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style PGREPLICA1 fill:#2ecc71,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style PGREPLICA2 fill:#2ecc71,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style REDIS_CLUSTER fill:#e67e22,stroke:#ffffff,stroke-width:3px,color:#ffffff
 ```
 
 ### Performance Optimization Techniques
@@ -650,7 +650,7 @@ module "elasticache_redis" {
 ### Monitoring & Observability Stack
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#ffffff', 'primaryTextColor': '#2c3e50', 'primaryBorderColor': '#2c3e50', 'lineColor': '#34495e', 'secondaryColor': '#ffffff', 'tertiaryColor': '#ffffff', 'background': '#ffffff', 'mainBkg': '#ffffff', 'secondBkg': '#ffffff', 'tertiaryBkg': '#ffffff'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': 'transparent', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ffffff', 'lineColor': '#ffffff', 'secondaryColor': 'transparent', 'tertiaryColor': 'transparent', 'background': 'transparent', 'mainBkg': 'transparent', 'secondBkg': 'transparent', 'tertiaryBkg': 'transparent', 'clusterBkg': 'transparent', 'clusterBorder': '#ffffff', 'edgeLabelBackground': 'transparent'}}}%%
 graph TB
     subgraph "Metrics Collection"
         PROM[Prometheus<br/>Metrics scraping<br/>15s intervals]
@@ -690,21 +690,21 @@ graph TB
     ALERTMANAGER --> PAGERDUTY
     ALERTMANAGER --> SLACK
     
-    style PROM fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#ffffff
-    style CADVISOR fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#ffffff
-    style NODE_EXP fill:#f39c12,stroke:#e67e22,stroke-width:3px,color:#ffffff
+    style PROM fill:#e74c3c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style CADVISOR fill:#e67e22,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style NODE_EXP fill:#f39c12,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style JAEGER fill:#9b59b6,stroke:#8e44ad,stroke-width:3px,color:#ffffff
-    style OTEL fill:#8e44ad,stroke:#7d3c98,stroke-width:3px,color:#ffffff
+    style JAEGER fill:#9b59b6,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style OTEL fill:#8e44ad,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style FLUENT fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#ffffff
-    style ELASTICSEARCH fill:#2980b9,stroke:#21618c,stroke-width:3px,color:#ffffff
-    style KIBANA fill:#21618c,stroke:#1b4f72,stroke-width:3px,color:#ffffff
+    style FLUENT fill:#3498db,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style ELASTICSEARCH fill:#2980b9,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style KIBANA fill:#21618c,stroke:#ffffff,stroke-width:3px,color:#ffffff
     
-    style GRAFANA fill:#27ae60,stroke:#229954,stroke-width:3px,color:#ffffff
-    style ALERTMANAGER fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#ffffff
-    style PAGERDUTY fill:#1abc9c,stroke:#16a085,stroke-width:3px,color:#ffffff
-    style SLACK fill:#16a085,stroke:#138d75,stroke-width:3px,color:#ffffff
+    style GRAFANA fill:#27ae60,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style ALERTMANAGER fill:#2ecc71,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style PAGERDUTY fill:#1abc9c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style SLACK fill:#16a085,stroke:#ffffff,stroke-width:3px,color:#ffffff
 ```
 
 ### Disaster Recovery Strategy
